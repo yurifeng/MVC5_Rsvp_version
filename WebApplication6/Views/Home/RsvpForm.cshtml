@@ -1,0 +1,28 @@
+﻿@model WebApplication6.Models.Gestresponse
+
+@{
+    ViewBag.Title = "RsvpForm";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>RsvpForm</h2>
+
+@using (Html.BeginForm())
+{@Html.ValidationSummary()
+<p>Your Name:@Html.TextBoxFor(x => x.Name)</p>
+<p>Your Name:@Html.TextBox("Name")</p>
+<p>Your email:@Html.TextBoxFor(x => x.Email)</p>
+<p>Your Phone:@Html.TextBoxFor(x => x.Phone)</p>
+
+
+<p>
+    Will you attend?
+    @Html.DropDownListFor(x => x.WillAttend, new[]
+    {
+        new SelectListItem() { Text = "yes,I'll be there.", Value = bool.TrueString },
+        new SelectListItem(){Text = "Sorry,I can't come",Value = bool.FalseString}
+    },"Choose an option.")
+</p>
+
+<input type="submit" value="Submit RVSP" />
+}

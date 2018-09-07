@@ -1,0 +1,22 @@
+﻿@model WebApplication6.Models.Gestresponse
+
+@{
+    ViewBag.Title = "Thanks";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Thanks,@Model.Name</h2>
+
+<p>
+    @if (Model.WillAttend == true)
+    {
+        @:感谢,期待您的到来..
+    }
+    else
+    {
+        @:Sorry to hear that you can not make it,but thanks for letting us know..
+    }
+</p>
+
+
+
