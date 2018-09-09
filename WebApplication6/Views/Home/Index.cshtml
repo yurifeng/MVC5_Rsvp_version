@@ -1,18 +1,34 @@
 ﻿
 @{
     ViewBag.Title = "index";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    //Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = null;
 }
 
-<h2>index</h2>
 
-<div>
-    @ViewBag.Message Ladies and gentlemen,
-    <p>
+<link href="~/Content/bootstrap.css" rel="stylesheet" />
+
+<style>
+    .btn a {
+        color: white;
+        text-decoration: none
+    }
+
+    body {
+        background-color: #f1f1f1
+    }
+</style>
+
+<div class="text-center">
+
+    <h2>@ViewBag.Message Ladies and gentlemen,</h2>
+    <h3>
         We're going to have an exciting party.
-    </p>
-    @Html.ActionLink("RSVP", "RsvpForm")
+    </h3>
 
-
+    <div class="btn btn-success">
+        @Html.ActionLink("RSVP", "RsvpForm")
+    </div>
 </div>
+
 
